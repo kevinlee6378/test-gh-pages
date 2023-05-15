@@ -41,6 +41,9 @@
             var gitbook = gitbook || [];
             gitbook.push(function() {
                 gitbook.page.hasChanged({%- include metadata-post.json.tpl -%});
+                if (window.location.hash) {
+                    document.querySelector(window.location.hash).scrollIntoView();
+                }
             });
             </script>
         </div>
